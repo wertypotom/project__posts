@@ -1,0 +1,25 @@
+.posts-conatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.heading-container {
+  height: 40px;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.heading-container select {
+  width: 30%;
+}
+
+.heading-container input {
+  width: 70%;
+}
