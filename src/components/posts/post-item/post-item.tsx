@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { IPost } from "../../../types/type-posts";
 import { Image, ListGroup, Row, Col, Button, Collapse } from "react-bootstrap";
 import UserAvatar from "./../../../assets/user-avatar.jpg";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux-hooks";
 import { fetchCommentsRequest } from "../../../redux/actions/comments-actions/comments-actions";
 import Comments from "../../comments/comments";
 import Loader from "../../../UI/loader/Loader";
+import "./post-item.css";
 
 type Props = {
   post: IPost;
@@ -15,6 +17,7 @@ const PostItem = ({ post }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useAppDispatch();
   const { areCommentsLoading } = useAppSelector((store) => store.posts);
+  const navigate = useNavigate();
 
   const handleRenderPostComments = () => {
     if (!isOpen) {
@@ -22,6 +25,10 @@ const PostItem = ({ post }: Props) => {
     }
 
     setIsOpen(!isOpen);
+  };
+
+  const handleNavigateToPost = () => {
+    navigate(`/${post.userId}`);
   };
 
   return (
@@ -32,10 +39,8 @@ const PostItem = ({ post }: Props) => {
             src={UserAvatar}
             alt="User Avatar"
             roundedCircle
-            style={{
-              width: "140px",
-              height: "140px",
-            }}
+            className="item-image"
+            onClick={handleNavigateToPost}
           />
         </Col>
         <Col xs={8} className="d-flex flex-column align-items-center">

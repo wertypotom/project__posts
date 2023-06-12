@@ -13,6 +13,8 @@ export const postReducer = (
   state = initialState,
   action: PostsActions
 ): PostsState => {
+  console.log("postReducer");
+
   switch (action.type) {
     case postTypes.FETCH_POST_REQUEST:
       return {

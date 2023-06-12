@@ -1,0 +1,9 @@
+.item-image {
+  width: 140px;
+  height: 140px;
+}
+
+.item-image:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
