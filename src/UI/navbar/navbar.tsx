@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Nav, Image, Container } from "react-bootstrap";
+import { Navbar, Nav, Image } from "react-bootstrap";
 import { Outlet, NavLink } from "react-router-dom";
 import UserAvatar from "./../../assets/user-avatar.jpg";
 

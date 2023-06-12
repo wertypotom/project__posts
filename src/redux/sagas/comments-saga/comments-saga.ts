@@ -1,11 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { call, put, takeEvery } from "redux-saga/effects";
-import { IPost } from "../../../types/type-posts";
-import {
-  fetchPostsFailure,
-  fetchPostsSuccess,
-} from "../../actions/posts-actions/posts-actions";
-import { commentsTypes, postTypes } from "../../../consts";
+import { commentsTypes } from "../../../consts";
 import { FetchCommentsRequest, IComments } from "../../../types/type-comments";
 import {
   fetchCommentsFailure,

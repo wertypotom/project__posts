@@ -1,7 +1,6 @@
 import React from "react";
 import { IComments } from "../../types/type-comments";
 import CommentItem from "./comment-item/comment-item";
-import { Card } from "react-bootstrap";
 
 type Props = {
   comments: IComments[];
