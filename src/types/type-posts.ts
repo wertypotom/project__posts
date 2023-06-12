@@ -14,9 +14,13 @@ export interface IPost {
   comments: IComments[];
 }
 
-export interface PostRequestParams {
+export interface PostPaginationRequestParams {
   limit: number;
   page: number;
+}
+
+export interface UserPostsRequestParams {
+  userId: number;
 }
 
 export interface PostsState {

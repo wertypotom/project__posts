@@ -19,10 +19,7 @@ const Comments = ({ comments }: Props) => {
         }}
       >
         {comments.map((comment) => (
-          <CommentItem
-            key={comment.id}
-            comment={comment}
-          />
+          <CommentItem key={comment.id} comment={comment} />
         ))}
       </div>
     </div>

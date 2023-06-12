@@ -8,7 +8,7 @@ import "./posts.css";
 import Input from "../../UI/input/input";
 import Select from "../../UI/select/select";
 import { FetchPostsRequestPayload, IPost } from "../../types/type-posts";
-import { getPagesArray, getPagesCount } from "../../utils/count-pages";
+import { getPagesArray } from "../../utils/count-pages";
 
 type Props = {};
 
@@ -21,6 +21,9 @@ const Posts = (props: Props) => {
   const { posts, arePostsLoading, pagesCount } = useAppSelector(
     (store) => store.posts
   );
+
+  console.log("posts", posts);
+
   const paginationPages = getPagesArray(pagesCount)?.map((item) => (
     <Pagination.Item
       onClick={() => changePostsPage(item)}
@@ -46,7 +49,6 @@ const Posts = (props: Props) => {
   const handlePostsSorting = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedValue(event.target.value);
   };
-  console.log(selectedValue);
 
   const getSortedPosts = (a: IPost, b: IPost) => {
     if (selectedValue === "titleDes") {

@@ -3,7 +3,7 @@ import { call, put, takeEvery } from "redux-saga/effects";
 import {
   FetchPostsRequest,
   IPost,
-  PostRequestParams,
+  PostPaginationRequestParams,
 } from "../../../types/type-posts";
 import {
   fetchPostsFailure,
@@ -17,7 +17,7 @@ const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 const getPosts = ({
   limit,
   page,
-}: PostRequestParams): Promise<AxiosResponse<IPost[]>> =>
+}: PostPaginationRequestParams): Promise<AxiosResponse<IPost[]>> =>
   axios.get<IPost[]>("https://jsonplaceholder.typicode.com/posts", {
     params: {
       _limit: limit,
